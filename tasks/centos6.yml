@@ -1,0 +1,161 @@
+---
+### CentOS 6.3
+- name: CentOS 6.3 BIOS
+  shell: "fast-vm import_image centos-6.3 {{ public_image_url_base }}/generated/6g__centos-6.3.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.3"
+  tags:
+    - centos6
+    - centos6_3
+
+- name: CentOS 6.3 UEFI
+  shell: "fast-vm import_image centos-6.3-uefi {{ public_image_url_base }}/generated/6g__centos-6.3-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.3-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_3_uefi
+
+- name: CentOS 6.3 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.3-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.3-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_3_uefi
+
+### CentOS 6.4
+- name: CentOS 6.4 BIOS
+  shell: "fast-vm import_image centos-6.4 {{ public_image_url_base }}/generated/6g__centos-6.4.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.4"
+  tags:
+    - centos6
+    - centos6_4
+
+- name: CentOS 6.4 UEFI
+  shell: "fast-vm import_image centos-6.4-uefi {{ public_image_url_base }}/generated/6g__centos-6.4-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.4-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_4_uefi
+
+- name: CentOS 6.4 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.4-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.4-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_4_uefi
+
+### CentOS 6.5
+- name: CentOS 6.5 BIOS
+  shell: "fast-vm import_image centos-6.5 {{ public_image_url_base }}/generated/6g__centos-6.5.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.5"
+  tags:
+    - centos6
+    - centos6_5
+
+- name: CentOS 6.5 UEFI
+  shell: "fast-vm import_image centos-6.5-uefi {{ public_image_url_base }}/generated/6g__centos-6.5-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.5-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_5_uefi
+
+- name: CentOS 6.5 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.5-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.5-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_5_uefi
+
+### CentOS 6.6
+- name: CentOS 6.6 BIOS
+  shell: "fast-vm import_image centos-6.6 {{ public_image_url_base }}/generated/6g__centos-6.6.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.6"
+  tags:
+    - centos6
+    - centos6_6
+
+- name: CentOS 6.6 UEFI
+  shell: "fast-vm import_image centos-6.6-uefi {{ public_image_url_base }}/generated/6g__centos-6.6-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.6-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_6_uefi
+
+- name: CentOS 6.6 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.6-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.6-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_6_uefi
+
+### CentOS 6.7
+- name: CentOS 6.7 BIOS
+  shell: "fast-vm import_image centos-6.7 {{ public_image_url_base }}/generated/6g__centos-6.7.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.7"
+  tags:
+    - centos6
+    - centos6_7
+
+- name: CentOS 6.7 UEFI
+  shell: "fast-vm import_image centos-6.7-uefi {{ public_image_url_base }}/generated/6g__centos-6.7-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.7-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_7_uefi
+
+- name: CentOS 6.7 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.7-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.7-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_7_uefi
+
+### CentOS 6.8
+- name: CentOS 6.8 BIOS
+  shell: "fast-vm import_image centos-6.8 {{ public_image_url_base }}/generated/6g__centos-6.8.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.8"
+  tags:
+    - centos6
+    - centos6_8
+
+- name: CentOS 6.8 UEFI
+  shell: "fast-vm import_image centos-6.8-uefi {{ public_image_url_base }}/generated/6g__centos-6.8-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.8-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_8_uefi
+
+- name: CentOS 6.8 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.8-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.8-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_8_uefi
+
+### CentOS 6.9
+- name: CentOS 6.9 BIOS
+  shell: "fast-vm import_image centos-6.9 {{ public_image_url_base }}/generated/6g__centos-6.9.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.9"
+  tags:
+    - centos6
+    - centos6_9
+
+- name: CentOS 6.9 UEFI
+  shell: "fast-vm import_image centos-6.9-uefi {{ public_image_url_base }}/generated/6g__centos-6.9-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.9-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_9_uefi
+
+- name: CentOS 6.9 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.9-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.9-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_9_uefi

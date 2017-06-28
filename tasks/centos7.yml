@@ -1,0 +1,68 @@
+---
+### CentOS 7.0
+- name: CentOS 7.0 BIOS
+  shell: "fast-vm import_image centos-7.0 {{ public_image_url_base }}/generated/6g__centos-7.0.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.0"
+  tags:
+    - centos7
+    - centos7_0
+
+- name: CentOS 7.0 UEFI
+  shell: "fast-vm import_image centos-7.0-uefi {{ public_image_url_base }}/generated/6g__centos-7.0-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-7.0-7.3-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.0-uefi"
+  tags:
+    - centos7_uefi
+    - centos7_0_uefi
+
+### CentOS 7.1
+- name: CentOS 7.1 BIOS
+  shell: "fast-vm import_image centos-7.1 {{ public_image_url_base }}/generated/6g__centos-7.1.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.1"
+  tags:
+    - centos7
+    - centos7_1
+
+- name: CentOS 7.1 UEFI
+  shell: "fast-vm import_image centos-7.1-uefi {{ public_image_url_base }}/generated/6g__centos-7.1-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-7.0-7.3-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.1-uefi"
+  tags:
+    - centos7_uefi
+    - centos7_1_uefi
+
+### CentOS 7.2
+- name: CentOS 7.2 BIOS
+  shell: "fast-vm import_image centos-7.2 {{ public_image_url_base }}/generated/6g__centos-7.2.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.2"
+  tags:
+    - centos7
+    - centos7_2
+
+- name: CentOS 7.2 UEFI
+  shell: "fast-vm import_image centos-7.2-uefi {{ public_image_url_base }}/generated/6g__centos-7.2-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-7.0-7.3-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.2-uefi"
+  tags:
+    - centos7_uefi
+    - centos7_2_uefi
+
+### CentOS 7.3
+- name: CentOS 7.3 BIOS
+  shell: "fast-vm import_image centos-7.3 {{ public_image_url_base }}/generated/6g__centos-7.3.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.3.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.3"
+  tags:
+    - centos7
+    - centos7_3
+
+- name: CentOS 7.3 UEFI
+  shell: "fast-vm import_image centos-7.3-uefi {{ public_image_url_base }}/generated/6g__centos-7.3-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-7.0-7.3-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.3-uefi"
+  tags:
+    - centos7_uefi
+    - centos7_3_uefi

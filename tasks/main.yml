@@ -1,0 +1,31 @@
+---
+- name: create directory for ansible custom facts
+  file: state=directory recurse=yes path=/etc/ansible/facts.d
+  tags: always
+
+- name: generate fast-vm custom facts
+  shell: echo '[conf]' > /etc/ansible/facts.d/fastvm.fact && cat /etc/fast-vm.conf >> /etc/ansible/facts.d/fastvm.fact
+  tags: always
+
+- name: re-read facts after adding custom fact
+  setup: filter=ansible_local
+  tags: always
+
+- fail: msg="variable {{ item }} is not defined, is the fast-vm installation working on that machine?"
+  when: item is not defined
+  with_items:
+    - ansible_local.fastvm.conf.thinpool_vg
+    - ansible_local.fastvm.conf.vm_prefix
+  tags: always
+
+####
+- name: include centos6 images
+  include: centos6.yml
+- name: include centos7 images
+  include: centos7.yml
+- name: include fedora images
+  include: fedora.yml
+- name: include ubuntu images
+  include: ubuntu.yml
+- name: include debian images
+  include: debian.yml

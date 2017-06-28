@@ -1,0 +1,15 @@
+---
+### XML and hack files location
+# URL or local path base to location where XML files and hack files are located
+xml_url_base: 'https://raw.githubusercontent.com/OndrejHome/fast-vm-public-images/master'
+hacks_url_base: 'https://raw.githubusercontent.com/OndrejHome/fast-vm-public-images/master'
+
+### public images
+# URL base of public fast-vm images mirror
+public_image_url_base: 'http://ftp.linux.cz/pub/linux/people/ondrej_famera/fastvm-images'
+# local path to public fast-vm images
+#public_image_url_base: '/local/path/fastvm-images'
+
+### restricted images
+# path or URL to RHEL fast-vm images (these cannot be public)
+rhel_image_url_base: ''
