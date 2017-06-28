@@ -21,8 +21,14 @@
 ####
 - name: include centos6 images
   include: centos6.yml
+  tags:
+    - centos
+    - centos6_all
 - name: include centos7 images
   include: centos7.yml
+  tags:
+    - centos
+    - centos7_all
 - name: include fedora images
   include: fedora.yml
 - name: include ubuntu images
