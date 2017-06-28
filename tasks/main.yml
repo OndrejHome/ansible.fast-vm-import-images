@@ -37,16 +37,19 @@
   include: debian.yml
 - name: include rhel5 images
   include: rhel5.yml
+  when: rhel_image_url_base != ''
   tags:
     - rhel
     - rhel5_all
 - name: include rhel6 images
   include: rhel6.yml
+  when: rhel_image_url_base != ''
   tags:
     - rhel
     - rhel6_all
 - name: include rhel7 images
   include: rhel7.yml
+  when: rhel_image_url_base != ''
   tags:
     - rhel
     - rhel7_all
