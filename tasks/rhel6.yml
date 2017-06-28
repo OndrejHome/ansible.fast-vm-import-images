@@ -1,0 +1,189 @@
+---
+### RHEL 6.0
+- name: RHEL 6.0 BIOS
+  shell: "fast-vm import_image rhel-6.0 {{ rhel_image_url_base }}/generated/6g__rhel-6.0-lsilogic.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.0-lsilogic.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.0"
+  tags:
+    - rhel6
+    - rhel6_0
+
+### RHEL 6.1
+- name: RHEL 6.1 BIOS
+  shell: "fast-vm import_image rhel-6.1 {{ rhel_image_url_base }}/generated/6g__rhel-6.1-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.1-6.2-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.1"
+  tags:
+    - rhel6
+    - rhel6_1
+
+### RHEL 6.2
+- name: RHEL 6.2 BIOS
+  shell: "fast-vm import_image rhel-6.2 {{ rhel_image_url_base }}/generated/6g__rhel-6.2-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.1-6.2-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.2"
+  tags:
+    - rhel6
+    - rhel6_2
+
+### RHEL 6.3
+- name: RHEL 6.3 BIOS
+  shell: "fast-vm import_image rhel-6.3 {{ rhel_image_url_base }}/generated/6g__rhel-6.3.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.3"
+  tags:
+    - rhel6
+    - rhel6_3
+
+- name: RHEL 6.3 UEFI
+  shell: "fast-vm import_image rhel-6.3-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.3-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_3_uefi
+
+- name: RHEL 6.3 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.3-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.3-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_3_uefi
+
+### RHEL 6.4
+- name: RHEL 6.4 BIOS
+  shell: "fast-vm import_image rhel-6.4 {{ rhel_image_url_base }}/generated/6g__rhel-6.4.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.4"
+  tags:
+    - rhel6
+    - rhel6_4
+
+- name: RHEL 6.4 UEFI
+  shell: "fast-vm import_image rhel-6.4-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.4-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_4_uefi
+
+- name: RHEL 6.4 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.4-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.4-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_4_uefi
+
+### RHEL 6.5
+- name: RHEL 6.5 BIOS
+  shell: "fast-vm import_image rhel-6.5 {{ rhel_image_url_base }}/generated/6g__rhel-6.5.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.5"
+  tags:
+    - rhel6
+    - rhel6_5
+
+- name: RHEL 6.5 UEFI
+  shell: "fast-vm import_image rhel-6.5-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.5-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_5_uefi
+
+- name: RHEL 6.5 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.5-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.5-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_5_uefi
+
+### RHEL 6.6
+- name: RHEL 6.6 BIOS
+  shell: "fast-vm import_image rhel-6.6 {{ rhel_image_url_base }}/generated/6g__rhel-6.6.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.6"
+  tags:
+    - rhel6
+    - rhel6_6
+
+- name: RHEL 6.6 UEFI
+  shell: "fast-vm import_image rhel-6.6-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.6-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_6_uefi
+
+- name: RHEL 6.6 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.6-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.6-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_6_uefi
+
+### RHEL 6.7
+- name: RHEL 6.7 BIOS
+  shell: "fast-vm import_image rhel-6.7 {{ rhel_image_url_base }}/generated/6g__rhel-6.7.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.7"
+  tags:
+    - rhel6
+    - rhel6_7
+
+- name: RHEL 6.7 UEFI
+  shell: "fast-vm import_image rhel-6.7-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.7-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_7_uefi
+
+- name: RHEL 6.7 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.7-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.7-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_7_uefi
+
+### RHEL 6.8
+- name: RHEL 6.8 BIOS
+  shell: "fast-vm import_image rhel-6.8 {{ rhel_image_url_base }}/generated/6g__rhel-6.8.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.8"
+  tags:
+    - rhel6
+    - rhel6_8
+
+- name: RHEL 6.8 UEFI
+  shell: "fast-vm import_image rhel-6.8-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.8-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_8_uefi
+
+- name: RHEL 6.8 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.8-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.8-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_8_uefi
+
+### RHEL 6.9
+- name: RHEL 6.9 BIOS
+  shell: "fast-vm import_image rhel-6.9 {{ rhel_image_url_base }}/generated/6g__rhel-6.9.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-7.3.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.9"
+  tags:
+    - rhel6
+    - rhel6_9
+
+- name: RHEL 6.9 UEFI
+  shell: "fast-vm import_image rhel-6.9-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-6.9-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.9-uefi"
+  tags:
+    - rhel6_uefi
+    - rhel6_9_uefi
+
+- name: RHEL 6.9 UEFI firmware
+  get_url: url="{{ rhel_image_url_base }}/generated/nvram-rhel-6.9-uefi_VARS.fd" dest="/etc/fast-vm/nvram-rhel-6.9-uefi_VARS.fd"
+  tags:
+    - rhel6_uefi
+    - rhel6_9_uefi
+

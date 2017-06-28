@@ -29,3 +29,18 @@
   include: ubuntu.yml
 - name: include debian images
   include: debian.yml
+- name: include rhel5 images
+  include: rhel5.yml
+  tags:
+    - rhel
+    - rhel5_all
+- name: include rhel6 images
+  include: rhel6.yml
+  tags:
+    - rhel
+    - rhel6_all
+- name: include rhel7 images
+  include: rhel7.yml
+  tags:
+    - rhel
+    - rhel7_all
