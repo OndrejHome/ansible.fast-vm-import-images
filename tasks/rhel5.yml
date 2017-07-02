@@ -1,4 +1,13 @@
 ---
+### RHEL 5.0 IDE
+- name: RHEL 5.0 BIOS IDE
+  shell: "fast-vm import_image rhel-5.0-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.0-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.0-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_0_ide
+
 ### RHEL 5.0
 - name: RHEL 5.0 BIOS
   shell: "fast-vm import_image rhel-5.0 {{ rhel_image_url_base }}/generated/6g__rhel-5.0-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.5,5.7-5.11-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
@@ -7,6 +16,15 @@
   tags:
     - rhel5
     - rhel5_0
+
+### RHEL 5.1 IDE
+- name: RHEL 5.1 BIOS IDE
+  shell: "fast-vm import_image rhel-5.1-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.1-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.1-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_1_ide
 
 ### RHEL 5.1
 - name: RHEL 5.1 BIOS
@@ -17,6 +35,15 @@
     - rhel5
     - rhel5_1
 
+### RHEL 5.2 IDE
+- name: RHEL 5.2 BIOS IDE
+  shell: "fast-vm import_image rhel-5.2-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.2-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.2-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_2_ide
+
 ### RHEL 5.2
 - name: RHEL 5.2 BIOS
   shell: "fast-vm import_image rhel-5.2 {{ rhel_image_url_base }}/generated/6g__rhel-5.2-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.5,5.7-5.11-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
@@ -25,6 +52,15 @@
   tags:
     - rhel5
     - rhel5_2
+
+### RHEL 5.3 IDE
+- name: RHEL 5.3 BIOS IDE
+  shell: "fast-vm import_image rhel-5.3-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.3-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.3-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_3_ide
 
 ### RHEL 5.3
 - name: RHEL 5.3 BIOS
@@ -35,6 +71,15 @@
     - rhel5
     - rhel5_3
 
+### RHEL 5.4 IDE
+- name: RHEL 5.4 BIOS IDE
+  shell: "fast-vm import_image rhel-5.4-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.4-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.4-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_4_ide
+
 ### RHEL 5.4
 - name: RHEL 5.4 BIOS
   shell: "fast-vm import_image rhel-5.4 {{ rhel_image_url_base }}/generated/6g__rhel-5.4-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.5,5.7-5.11-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
@@ -43,6 +88,15 @@
   tags:
     - rhel5
     - rhel5_4
+
+### RHEL 5.5 IDE
+- name: RHEL 5.5 BIOS IDE
+  shell: "fast-vm import_image rhel-5.5-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.5-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.5-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_5_ide
 
 ### RHEL 5.5
 - name: RHEL 5.5 BIOS
@@ -53,8 +107,26 @@
     - rhel5
     - rhel5_5
 
+### RHEL 5.6 IDE
+- name: RHEL 5.6 BIOS IDE
+  shell: "fast-vm import_image rhel-5.6-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.6-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.6-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_6_ide
+
 ### RHEL 5.6
 # not available at the moment due to issues with installer SCSI controller compatibility
+
+### RHEL 5.7 IDE
+- name: RHEL 5.7 BIOS IDE
+  shell: "fast-vm import_image rhel-5.7-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.7-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.7-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_7_ide
 
 ### RHEL 5.7
 - name: RHEL 5.7 BIOS
@@ -65,6 +137,15 @@
     - rhel5
     - rhel5_7
 
+### RHEL 5.8 IDE
+- name: RHEL 5.8 BIOS IDE
+  shell: "fast-vm import_image rhel-5.8-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.8-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.8-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_8_ide
+
 ### RHEL 5.8
 - name: RHEL 5.8 BIOS
   shell: "fast-vm import_image rhel-5.8 {{ rhel_image_url_base }}/generated/6g__rhel-5.8-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.5,5.7-5.11-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
@@ -73,6 +154,15 @@
   tags:
     - rhel5
     - rhel5_8
+
+### RHEL 5.9 IDE
+- name: RHEL 5.9 BIOS IDE
+  shell: "fast-vm import_image rhel-5.9-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.9-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.9-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_9_ide
 
 ### RHEL 5.9
 - name: RHEL 5.9 BIOS
@@ -83,6 +173,15 @@
     - rhel5
     - rhel5_9
 
+### RHEL 5.10 IDE
+- name: RHEL 5.10 BIOS IDE
+  shell: "fast-vm import_image rhel-5.10-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.10-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.10-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_10_ide
+
 ### RHEL 5.10
 - name: RHEL 5.10 BIOS
   shell: "fast-vm import_image rhel-5.10 {{ rhel_image_url_base }}/generated/6g__rhel-5.10-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.5,5.7-5.11-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
@@ -92,6 +191,15 @@
     - rhel5
     - rhel5_10
 
+### RHEL 5.11 IDE
+- name: RHEL 5.11 BIOS IDE
+  shell: "fast-vm import_image rhel-5.11-ide {{ rhel_image_url_base }}/generated/6g__rhel-5.11-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.11.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-5.11-ide"
+  tags:
+    - rhel5_ide
+    - rhel5_11_ide
+
 ### RHEL 5.11
 - name: RHEL 5.11 BIOS
   shell: "fast-vm import_image rhel-5.11 {{ rhel_image_url_base }}/generated/6g__rhel-5.11-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-5.0-5.5,5.7-5.11-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-5-hacks.sh"
@@ -100,4 +208,3 @@
   tags:
     - rhel5
     - rhel5_11
-

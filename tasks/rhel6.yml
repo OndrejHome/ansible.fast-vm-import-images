@@ -1,4 +1,13 @@
 ---
+### RHEL 6.0 IDE
+- name: RHEL 6.0 BIOS IDE
+  shell: "fast-vm import_image rhel-6.0-ide {{ rhel_image_url_base }}/generated/6g__rhel-6.0-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.0-6.2.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.0-ide"
+  tags:
+    - rhel6_ide
+    - rhel6_0_ide
+
 ### RHEL 6.0
 - name: RHEL 6.0 BIOS
   shell: "fast-vm import_image rhel-6.0 {{ rhel_image_url_base }}/generated/6g__rhel-6.0-lsilogic.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.0-lsilogic.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
@@ -8,6 +17,15 @@
     - rhel6
     - rhel6_0
 
+### RHEL 6.1 IDE
+- name: RHEL 6.1 BIOS IDE
+  shell: "fast-vm import_image rhel-6.1-ide {{ rhel_image_url_base }}/generated/6g__rhel-6.1-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.0-6.2.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.1-ide"
+  tags:
+    - rhel6_ide
+    - rhel6_1_ide
+
 ### RHEL 6.1
 - name: RHEL 6.1 BIOS
   shell: "fast-vm import_image rhel-6.1 {{ rhel_image_url_base }}/generated/6g__rhel-6.1-lsisas1078.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.1-6.2-lsisas1078.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
@@ -16,6 +34,15 @@
   tags:
     - rhel6
     - rhel6_1
+
+### RHEL 6.2 IDE
+- name: RHEL 6.2 BIOS IDE
+  shell: "fast-vm import_image rhel-6.2-ide {{ rhel_image_url_base }}/generated/6g__rhel-6.2-ide.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.0-6.2.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-6.2-ide"
+  tags:
+    - rhel6_ide
+    - rhel6_2_ide
 
 ### RHEL 6.2
 - name: RHEL 6.2 BIOS
