@@ -1,7 +1,7 @@
 ---
 ### CentOS 6.3
 - name: CentOS 6.3 BIOS
-  shell: "fast-vm import_image centos-6.3 {{ public_image_url_base }}/generated/6g__centos-6.3.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.3 {{ public_image_url_base }}/generated/6g__centos-6.3.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.3"
   tags:
@@ -9,7 +9,7 @@
     - centos6_3
 
 - name: CentOS 6.3 UEFI
-  shell: "fast-vm import_image centos-6.3-uefi {{ public_image_url_base }}/generated/6g__centos-6.3-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.3-uefi {{ public_image_url_base }}/generated/6g__centos-6.3-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.3-uefi"
   tags:
@@ -24,7 +24,7 @@
 
 ### CentOS 6.4
 - name: CentOS 6.4 BIOS
-  shell: "fast-vm import_image centos-6.4 {{ public_image_url_base }}/generated/6g__centos-6.4.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.4 {{ public_image_url_base }}/generated/6g__centos-6.4.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.4"
   tags:
@@ -32,7 +32,7 @@
     - centos6_4
 
 - name: CentOS 6.4 UEFI
-  shell: "fast-vm import_image centos-6.4-uefi {{ public_image_url_base }}/generated/6g__centos-6.4-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.4-uefi {{ public_image_url_base }}/generated/6g__centos-6.4-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.4-uefi"
   tags:
@@ -47,7 +47,7 @@
 
 ### CentOS 6.5
 - name: CentOS 6.5 BIOS
-  shell: "fast-vm import_image centos-6.5 {{ public_image_url_base }}/generated/6g__centos-6.5.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.5 {{ public_image_url_base }}/generated/6g__centos-6.5.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.5"
   tags:
@@ -55,7 +55,7 @@
     - centos6_5
 
 - name: CentOS 6.5 UEFI
-  shell: "fast-vm import_image centos-6.5-uefi {{ public_image_url_base }}/generated/6g__centos-6.5-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.5-uefi {{ public_image_url_base }}/generated/6g__centos-6.5-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.5-uefi"
   tags:
@@ -70,7 +70,7 @@
 
 ### CentOS 6.6
 - name: CentOS 6.6 BIOS
-  shell: "fast-vm import_image centos-6.6 {{ public_image_url_base }}/generated/6g__centos-6.6.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.6 {{ public_image_url_base }}/generated/6g__centos-6.6.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.6"
   tags:
@@ -78,7 +78,7 @@
     - centos6_6
 
 - name: CentOS 6.6 UEFI
-  shell: "fast-vm import_image centos-6.6-uefi {{ public_image_url_base }}/generated/6g__centos-6.6-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.6-uefi {{ public_image_url_base }}/generated/6g__centos-6.6-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.6-uefi"
   tags:
@@ -93,7 +93,7 @@
 
 ### CentOS 6.7
 - name: CentOS 6.7 BIOS
-  shell: "fast-vm import_image centos-6.7 {{ public_image_url_base }}/generated/6g__centos-6.7.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.7 {{ public_image_url_base }}/generated/6g__centos-6.7.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.7"
   tags:
@@ -101,7 +101,7 @@
     - centos6_7
 
 - name: CentOS 6.7 UEFI
-  shell: "fast-vm import_image centos-6.7-uefi {{ public_image_url_base }}/generated/6g__centos-6.7-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.7-uefi {{ public_image_url_base }}/generated/6g__centos-6.7-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.7-uefi"
   tags:
@@ -116,7 +116,7 @@
 
 ### CentOS 6.8
 - name: CentOS 6.8 BIOS
-  shell: "fast-vm import_image centos-6.8 {{ public_image_url_base }}/generated/6g__centos-6.8.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.8 {{ public_image_url_base }}/generated/6g__centos-6.8.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.8"
   tags:
@@ -124,7 +124,7 @@
     - centos6_8
 
 - name: CentOS 6.8 UEFI
-  shell: "fast-vm import_image centos-6.8-uefi {{ public_image_url_base }}/generated/6g__centos-6.8-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.8-uefi {{ public_image_url_base }}/generated/6g__centos-6.8-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.8-uefi"
   tags:
@@ -139,7 +139,7 @@
 
 ### CentOS 6.9
 - name: CentOS 6.9 BIOS
-  shell: "fast-vm import_image centos-6.9 {{ public_image_url_base }}/generated/6g__centos-6.9.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-7.4.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  shell: "fast-vm import_image centos-6.9 {{ public_image_url_base }}/generated/6g__centos-6.9.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.9"
   tags:
@@ -147,7 +147,7 @@
     - centos6_9
 
 - name: CentOS 6.9 UEFI
-  shell: "fast-vm import_image centos-6.9-uefi {{ public_image_url_base }}/generated/6g__centos-6.9-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-6.9-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  shell: "fast-vm import_image centos-6.9-uefi {{ public_image_url_base }}/generated/6g__centos-6.9-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.9-uefi"
   tags:
