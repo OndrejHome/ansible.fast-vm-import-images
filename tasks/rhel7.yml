@@ -83,3 +83,20 @@
   tags:
     - rhel7_uefi
     - rhel7_4_uefi
+
+### RHEL 7.5
+- name: RHEL 7.5 BIOS
+  shell: "fast-vm import_image rhel-7.5 {{ rhel_image_url_base }}/generated/6g__rhel-7.5.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.5"
+  tags:
+    - rhel7
+    - rhel7_5
+
+- name: RHEL 7.5 UEFI
+  shell: "fast-vm import_image rhel-7.5-uefi {{ rhel_image_url_base }}/generated/6g__rhel-6.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.5-uefi"
+  tags:
+    - rhel7_uefi
+    - rhel7_5_uefi
