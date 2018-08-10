@@ -1,22 +1,4 @@
 ---
-### Debian 8.0
-- name: Debian 8.0 BIOS
-  shell: "fast-vm import_image debian8.0 {{ public_image_url_base }}/debian-8.0.img.xz {{ xml_url_base }}/debian/xml/debian-8.xml {{ hacks_url_base }}/debian/hacks/debian-8.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian8.0"
-  tags:
-    - debian
-    - debian8_0
-
-### Debian 8.5
-- name: Debian 8.5 BIOS
-  shell: "fast-vm import_image debian8.5 {{ public_image_url_base }}/debian-8.5.img.xz {{ xml_url_base }}/debian/xml/debian-8.xml {{ hacks_url_base }}/debian/hacks/debian-8.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian8.5"
-  tags:
-    - debian
-    - debian8_5
-
 ### Debian 9.3
 - name: Debian 9.3 BIOS
   shell: "fast-vm import_image debian-9.3 {{ public_image_url_base }}/generated/6g__debian-9.3.img.xz {{ xml_url_base }}/debian/xml/debian-9.xml {{ hacks_url_base }}/debian/hacks/debian-9.sh"
@@ -34,3 +16,12 @@
   tags:
     - debian
     - debian9_4
+
+### Debian 9.5
+- name: Debian 9.5 BIOS
+  shell: "fast-vm import_image debian-9.5 {{ public_image_url_base }}/generated/6g__debian-9.5.img.xz {{ xml_url_base }}/debian/xml/debian-9.xml {{ hacks_url_base }}/debian/hacks/debian-9.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.5"
+  tags:
+    - debian
+    - debian9_5

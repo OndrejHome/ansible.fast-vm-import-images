@@ -159,3 +159,26 @@
   tags:
     - centos6_uefi
     - centos6_9_uefi
+
+### CentOS 6.10
+- name: CentOS 6.10 BIOS
+  shell: "fast-vm import_image centos-6.10 {{ public_image_url_base }}/generated/6g__centos-6.10.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.10"
+  tags:
+    - centos6
+    - centos6_10
+
+- name: CentOS 6.10 UEFI
+  shell: "fast-vm import_image centos-6.10-uefi {{ public_image_url_base }}/generated/6g__centos-6.10-uefi.img.xz {{ xml_url_base }}/centos/xml/centos-6.3-current-uefi.xml {{ hacks_url_base }}/centos/hacks/6g_centos-6-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-6.10-uefi"
+  tags:
+    - centos6_uefi
+    - centos6_10_uefi
+
+- name: CentOS 6.10 UEFI firmware
+  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.10-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.10-uefi_VARS.fd"
+  tags:
+    - centos6_uefi
+    - centos6_10_uefi

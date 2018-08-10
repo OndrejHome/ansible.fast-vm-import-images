@@ -1,31 +1,4 @@
 ---
-### Fedora 22
-- name: Fedora 22 BIOS
-  shell: "fast-vm import_image f22 {{ public_image_url_base }}/fedora-22-server.img.xz {{ xml_url_base }}/archived/fedora/xml/fedora-22.xml {{ hacks_url_base }}/archived/fedora/hacks/fedora-22-hacks.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}f22"
-  tags:
-    - fedora
-    - fedora_22
-
-### Fedora 23
-- name: Fedora 23 BIOS
-  shell: "fast-vm import_image f23 {{ public_image_url_base }}/fedora-23-server.img.xz {{ xml_url_base }}/archived/fedora/xml/fedora-23-27.xml {{ hacks_url_base }}/archived/fedora/hacks/fedora-23-hacks.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}f23"
-  tags:
-    - fedora
-    - fedora_23
-
-### Fedora 24
-- name: Fedora 24 BIOS
-  shell: "fast-vm import_image f24 {{ public_image_url_base }}/fedora-24-server.img.xz {{ xml_url_base }}/fedora/xml/fedora-23-27.xml {{ hacks_url_base }}/fedora/hacks/fedora-24-hacks.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}f24"
-  tags:
-    - fedora
-    - fedora_24
-
 ### Fedora 25
 - name: Fedora 25 BIOS
   shell: "fast-vm import_image fedora25 {{ public_image_url_base }}/6g__fedora-25.img.xz {{ xml_url_base }}/fedora/xml/fedora-23-27.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-25-hacks.sh"
@@ -48,7 +21,16 @@
 - name: Fedora 27 BIOS
   shell: "fast-vm import_image fedora27 {{ public_image_url_base }}/6g__fedora-27.img.xz {{ xml_url_base }}/fedora/xml/fedora-23-27.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-27-hacks.sh"
   args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora26"
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora27"
   tags:
     - fedora
     - fedora_27
+
+### Fedora 28
+- name: Fedora 28 BIOS
+  shell: "fast-vm import_image fedora28 {{ public_image_url_base }}/6g__fedora-28.img.xz {{ xml_url_base }}/fedora/xml/fedora-28.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-28-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora28"
+  tags:
+    - fedora
+    - fedora_28
