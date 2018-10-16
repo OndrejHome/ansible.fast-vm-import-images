@@ -15,7 +15,6 @@ Role Variables
   - URL or local path base to location where XML files are located
     ```
     xml_url_base: 'https://raw.githubusercontent.com/OndrejHome/fast-vm-public-images/master'
-
     ```
 
   - URL or local path base to location where hack files are located
