@@ -8,24 +8,6 @@
     - ubuntu
     - ubuntu14_04
 
-### Ubuntu 15.04
-- name: Ubuntu 15.04 BIOS
-  shell: "fast-vm import_image ub15.04 {{ public_image_url_base }}/ubuntu-15.04-server.img.xz {{ xml_url_base }}/archived/ubuntu/xml/ubuntu-1504-1510.xml {{ hacks_url_base }}/archived/ubuntu/hacks/ubuntu-1504-hacks.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}ub15.04"
-  tags:
-    - ubuntu
-    - ubuntu15_04
-
-### Ubuntu 15.10
-- name: Ubuntu 15.10 BIOS
-  shell: "fast-vm import_image ub15.10 {{ public_image_url_base }}/ubuntu-15.10-server.img.xz {{ xml_url_base }}/archived/ubuntu/xml/ubuntu-1504-1510.xml {{ hacks_url_base }}/archived/ubuntu/hacks/ubuntu-1510-hacks.sh"
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}ub15.10"
-  tags:
-    - ubuntu
-    - ubuntu15_10
-
 ### Ubuntu 16.04
 - name: Ubuntu 16.04 BIOS
   shell: "fast-vm import_image ub16.04 {{ public_image_url_base }}/ubuntu-16.04-server.img.xz {{ xml_url_base }}/ubuntu/xml/ubuntu-1604-1610.xml {{ hacks_url_base }}/ubuntu/hacks/ubuntu-1604-hacks.sh"
