@@ -100,3 +100,20 @@
   tags:
     - rhel7_uefi
     - rhel7_5_uefi
+
+### RHEL 7.6
+- name: RHEL 7.6 BIOS
+  shell: "fast-vm import_image rhel-7.6 {{ rhel_image_url_base }}/generated/6g__rhel-7.6.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.6"
+  tags:
+    - rhel7
+    - rhel7_6
+
+- name: RHEL 7.6 UEFI
+  shell: "fast-vm import_image rhel-7.6-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.6-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.6-uefi"
+  tags:
+    - rhel7_uefi
+    - rhel7_6_uefi
