@@ -19,7 +19,7 @@
 
 ### Fedora 28
 - name: Fedora 28 BIOS
-  shell: "fast-vm import_image fedora28 {{ public_image_url_base }}/generated/6g__fedora-28.img.xz {{ xml_url_base }}/fedora/xml/fedora-28.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-28-hacks.sh"
+  shell: "fast-vm import_image fedora28 {{ public_image_url_base }}/generated/6g__fedora-28.img.xz {{ xml_url_base }}/fedora/xml/fedora-28-current.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-28-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora28"
   tags:
@@ -28,7 +28,7 @@
 
 ### Fedora 29
 - name: Fedora 29 BIOS
-  shell: "fast-vm import_image fedora29 {{ public_image_url_base }}/generated/6g__fedora-29.img.xz {{ xml_url_base }}/fedora/xml/fedora-29.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-29-hacks.sh"
+  shell: "fast-vm import_image fedora29 {{ public_image_url_base }}/generated/6g__fedora-29.img.xz {{ xml_url_base }}/fedora/xml/fedora-28-current.xml {{ hacks_url_base }}/fedora/hacks/6g_fedora-29-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora29"
   tags:
