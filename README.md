@@ -7,7 +7,9 @@ Requirements
 ------------
 
 This roles was tested only on CentOS/RHEL 7.3. On RHEL systems this role expects that system is properly registered so it can download and install packages.
-Also the working fast-vm installation is expected to be present on the machine
+Also the working fast-vm installation is expected to be present on the machine.
+
+NOTE: For RHEL 8.0 images this role also downloads and unpacks the Fedora 29 libguestfs appliance on non-Fedora systems. This may change in future.
 
 Role Variables
 --------------

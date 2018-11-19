@@ -53,3 +53,9 @@
   tags:
     - rhel
     - rhel7_all
+- name: include rhel8 images
+  include: rhel8.yml
+  when: rhel_image_url_base != ''
+  tags:
+    - rhel
+    - rhel8_all
