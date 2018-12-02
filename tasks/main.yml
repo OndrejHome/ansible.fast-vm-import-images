@@ -11,7 +11,8 @@
   setup: filter=ansible_local
   tags: always
 
-- fail: msg="variable {{ item }} is not defined, is the fast-vm installation working on that machine?"
+- name: Check the presence of fast-vm variables after facts were generated
+  fail: msg="variable {{ item }} is not defined, is the fast-vm installation working on that machine?"
   when: item is not defined
   with_items:
     - ansible_local.fastvm.conf.thinpool_vg
@@ -37,25 +38,25 @@
   include: debian.yml
 - name: include rhel5 images
   include: rhel5.yml
-  when: rhel_image_url_base != ''
+  when: rhel_image_url_base|length > 0
   tags:
     - rhel
     - rhel5_all
 - name: include rhel6 images
   include: rhel6.yml
-  when: rhel_image_url_base != ''
+  when: rhel_image_url_base|length > 0
   tags:
     - rhel
     - rhel6_all
 - name: include rhel7 images
   include: rhel7.yml
-  when: rhel_image_url_base != ''
+  when: rhel_image_url_base|length > 0
   tags:
     - rhel
     - rhel7_all
 - name: include rhel8 images
   include: rhel8.yml
-  when: rhel_image_url_base != ''
+  when: rhel_image_url_base|length > 0
   tags:
     - rhel
     - rhel8_all
