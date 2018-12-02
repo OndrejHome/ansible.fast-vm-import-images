@@ -1,7 +1,10 @@
 ---
 ### Debian 9.3
 - name: Debian 9.3 BIOS
-  command: "fast-vm import_image debian-9.3 {{ public_image_url_base }}/generated/6g__debian-9.3.img.xz {{ xml_url_base }}/debian/xml/debian-9.xml {{ hacks_url_base }}/debian/hacks/debian-9.sh"
+  command: >-
+    fast-vm import_image debian-9.3 {{ public_image_url_base }}/generated/6g__debian-9.3.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.3"
   tags:
@@ -10,7 +13,10 @@
 
 ### Debian 9.4
 - name: Debian 9.4 BIOS
-  command: "fast-vm import_image debian-9.4 {{ public_image_url_base }}/generated/6g__debian-9.4.img.xz {{ xml_url_base }}/debian/xml/debian-9.xml {{ hacks_url_base }}/debian/hacks/debian-9.sh"
+  command: >-
+    fast-vm import_image debian-9.4 {{ public_image_url_base }}/generated/6g__debian-9.4.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.4"
   tags:
@@ -19,7 +25,10 @@
 
 ### Debian 9.5
 - name: Debian 9.5 BIOS
-  command: "fast-vm import_image debian-9.5 {{ public_image_url_base }}/generated/6g__debian-9.5.img.xz {{ xml_url_base }}/debian/xml/debian-9.xml {{ hacks_url_base }}/debian/hacks/debian-9.sh"
+  command: >-
+    fast-vm import_image debian-9.5 {{ public_image_url_base }}/generated/6g__debian-9.5.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.5"
   tags:
