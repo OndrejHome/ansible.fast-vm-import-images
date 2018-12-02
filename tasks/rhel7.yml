@@ -1,7 +1,7 @@
 ---
 ### RHEL 7.0
 - name: RHEL 7.0 BIOS
-  shell: "fast-vm import_image rhel-7.0 {{ rhel_image_url_base }}/generated/6g__rhel-7.0.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.0 {{ rhel_image_url_base }}/generated/6g__rhel-7.0.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.0"
   tags:
@@ -9,7 +9,7 @@
     - rhel7_0
 
 - name: RHEL 7.0 UEFI
-  shell: "fast-vm import_image rhel-7.0-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.0-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.0-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.0-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.0-uefi"
   tags:
@@ -18,7 +18,7 @@
 
 ### RHEL 7.1
 - name: RHEL 7.1 BIOS
-  shell: "fast-vm import_image rhel-7.1 {{ rhel_image_url_base }}/generated/6g__rhel-7.1.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.1 {{ rhel_image_url_base }}/generated/6g__rhel-7.1.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.1"
   tags:
@@ -26,7 +26,7 @@
     - rhel7_1
 
 - name: RHEL 7.1 UEFI
-  shell: "fast-vm import_image rhel-7.1-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.1-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.1-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.1-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.1-uefi"
   tags:
@@ -35,7 +35,7 @@
 
 ### RHEL 7.2
 - name: RHEL 7.2 BIOS
-  shell: "fast-vm import_image rhel-7.2 {{ rhel_image_url_base }}/generated/6g__rhel-7.2.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.2 {{ rhel_image_url_base }}/generated/6g__rhel-7.2.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.2"
   tags:
@@ -43,7 +43,7 @@
     - rhel7_2
 
 - name: RHEL 7.2 UEFI
-  shell: "fast-vm import_image rhel-7.2-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.2-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.2-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.2-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.2-uefi"
   tags:
@@ -52,7 +52,7 @@
 
 ### RHEL 7.3
 - name: RHEL 7.3 BIOS
-  shell: "fast-vm import_image rhel-7.3 {{ rhel_image_url_base }}/generated/6g__rhel-7.3.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.3 {{ rhel_image_url_base }}/generated/6g__rhel-7.3.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.3"
   tags:
@@ -60,7 +60,7 @@
     - rhel7_3
 
 - name: RHEL 7.3 UEFI
-  shell: "fast-vm import_image rhel-7.3-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.3-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.3-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.3-uefi"
   tags:
@@ -69,7 +69,7 @@
 
 ### RHEL 7.4
 - name: RHEL 7.4 BIOS
-  shell: "fast-vm import_image rhel-7.4 {{ rhel_image_url_base }}/generated/6g__rhel-7.4.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.4 {{ rhel_image_url_base }}/generated/6g__rhel-7.4.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.4"
   tags:
@@ -77,7 +77,7 @@
     - rhel7_4
 
 - name: RHEL 7.4 UEFI
-  shell: "fast-vm import_image rhel-7.4-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.4-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.4-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.4-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.4-uefi"
   tags:
@@ -86,7 +86,7 @@
 
 ### RHEL 7.5
 - name: RHEL 7.5 BIOS
-  shell: "fast-vm import_image rhel-7.5 {{ rhel_image_url_base }}/generated/6g__rhel-7.5.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.5 {{ rhel_image_url_base }}/generated/6g__rhel-7.5.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.5"
   tags:
@@ -94,7 +94,7 @@
     - rhel7_5
 
 - name: RHEL 7.5 UEFI
-  shell: "fast-vm import_image rhel-7.5-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.5-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.5-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.5-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.5-uefi"
   tags:
@@ -103,7 +103,7 @@
 
 ### RHEL 7.6
 - name: RHEL 7.6 BIOS
-  shell: "fast-vm import_image rhel-7.6 {{ rhel_image_url_base }}/generated/6g__rhel-7.6.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
+  command: "fast-vm import_image rhel-7.6 {{ rhel_image_url_base }}/generated/6g__rhel-7.6.img.xz {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.6"
   tags:
@@ -111,7 +111,7 @@
     - rhel7_6
 
 - name: RHEL 7.6 UEFI
-  shell: "fast-vm import_image rhel-7.6-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.6-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
+  command: "fast-vm import_image rhel-7.6-uefi {{ rhel_image_url_base }}/generated/6g__rhel-7.6-uefi.img.xz {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml {{ hacks_url_base }}/rhel/hacks/6g_rhel-7-hacks-uefi.sh"
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-7.6-uefi"
   tags:
