@@ -3,8 +3,16 @@
   file: state=directory recurse=yes path=/etc/ansible/facts.d
   tags: always
 
+- name: get content of /etc/fast-vm.conf
+  command: cat /etc/fast-vm.conf
+  changed_when: False
+  register: fast_vm_conf
+  tags: always
+
 - name: generate fast-vm custom facts
-  shell: echo '[conf]' > /etc/ansible/facts.d/fastvm.fact && cat /etc/fast-vm.conf >> /etc/ansible/facts.d/fastvm.fact
+  copy:
+    dest: /etc/ansible/facts.d/fastvm.fact
+    content: "[conf]\n{{ fast_vm_conf.stdout }}"
   tags: always
 
 - name: re-read facts after adding custom fact
