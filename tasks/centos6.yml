@@ -23,7 +23,9 @@
     - centos6_3_uefi
 
 - name: CentOS 6.3 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.3-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.3-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.3-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.3-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_3_uefi
@@ -52,7 +54,9 @@
     - centos6_4_uefi
 
 - name: CentOS 6.4 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.4-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.4-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.4-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.4-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_4_uefi
@@ -81,7 +85,9 @@
     - centos6_5_uefi
 
 - name: CentOS 6.5 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.5-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.5-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.5-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.5-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_5_uefi
@@ -110,7 +116,9 @@
     - centos6_6_uefi
 
 - name: CentOS 6.6 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.6-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.6-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.6-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.6-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_6_uefi
@@ -139,7 +147,9 @@
     - centos6_7_uefi
 
 - name: CentOS 6.7 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.7-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.7-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.7-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.7-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_7_uefi
@@ -168,7 +178,9 @@
     - centos6_8_uefi
 
 - name: CentOS 6.8 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.8-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.8-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.8-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.8-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_8_uefi
@@ -197,7 +209,9 @@
     - centos6_9_uefi
 
 - name: CentOS 6.9 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.9-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.9-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.9-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.9-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_9_uefi
@@ -226,7 +240,9 @@
     - centos6_10_uefi
 
 - name: CentOS 6.10 UEFI firmware
-  get_url: url="{{ public_image_url_base }}/generated/nvram-centos-6.10-uefi_VARS.fd" dest="/etc/fast-vm/nvram-centos-6.10-uefi_VARS.fd"
+  get_url:
+    url: "{{ public_image_url_base }}/generated/nvram-centos-6.10-uefi_VARS.fd"
+    dest: "/etc/fast-vm/nvram-centos-6.10-uefi_VARS.fd"
   tags:
     - centos6_uefi
     - centos6_10_uefi
