@@ -52,9 +52,9 @@ Import everything from from local drive (offline import, no Internet connection 
 
 
 **IMPORTANT** By default this role imports _all_ available images. To select which images you want to import use 'tags'.
-Example of importing centos 6 BIOS images, centos 7 UEFI images and fedora 25 image.
+Example of importing CentOS 6 BIOS images, CentOS 7 UEFI images and Fedora 29 image.
 
-    # ansible-playbook example.yml --tags 'centos6,centos7_uefi,fedora25'
+    # ansible-playbook example.yml --tags 'centos6,centos7_uefi,fedora_29'
 
 License
 -------
