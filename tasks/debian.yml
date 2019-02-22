@@ -34,3 +34,27 @@
   tags:
     - debian
     - debian9_5
+
+### Debian 9.7
+- name: Debian 9.7 BIOS
+  command: >-
+    fast-vm import_image debian-9.7 {{ public_image_url_base }}/generated/6g__debian-9.7.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.7"
+  tags:
+    - debian
+    - debian9_7
+
+### Debian 9.8
+- name: Debian 9.8 BIOS
+  command: >-
+    fast-vm import_image debian-9.8 {{ public_image_url_base }}/generated/6g__debian-9.8.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.8"
+  tags:
+    - debian
+    - debian9_8
