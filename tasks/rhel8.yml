@@ -16,22 +16,22 @@
 ### RHEL 8.0 Beta
 - name: RHEL 8.0 BIOS
   command: >-
-    fast-vm import_image rhel-8.0-beta {{ rhel_image_url_base }}/generated/6g__rhel-8.0-beta.img.xz
+    fast-vm import_image rhel-8.0 {{ rhel_image_url_base }}/generated/6g__rhel-8.0.img.xz
     {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml
     {{ hacks_url_base }}/rhel/hacks/6g_rhel-8-hacks.sh
   args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-8.0-beta"
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-8.0"
   tags:
-    - rhel8_beta
-    - rhel8_0_beta
+    - rhel8
+    - rhel8_0
 
 - name: RHEL 8.0 UEFI
   command: >-
-    fast-vm import_image rhel-8.0-beta-uefi {{ rhel_image_url_base }}/generated/6g__rhel-8.0-uefi-uefi.img.xz
+    fast-vm import_image rhel-8.0-uefi {{ rhel_image_url_base }}/generated/6g__rhel-8.0-uefi-uefi.img.xz
     {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml
     {{ hacks_url_base }}/rhel/hacks/6g_rhel-8-hacks-uefi.sh
   args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-8.0-beta-uefi"
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-8.0-uefi"
   tags:
-    - rhel8_beta_uefi
-    - rhel8_0_beta_uefi
+    - rhel8_uefi
+    - rhel8_0_uefi
