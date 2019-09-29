@@ -1,28 +1,4 @@
 ---
-### Fedora 26
-- name: Fedora 26 BIOS
-  command: >-
-    fast-vm import_image fedora26 {{ public_image_url_base }}/generated/6g__fedora-26.img.xz
-    {{ xml_url_base }}/fedora/xml/fedora-23-27.xml
-    {{ hacks_url_base }}/fedora/hacks/6g_fedora-26-hacks.sh
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora26"
-  tags:
-    - fedora
-    - fedora_26
-
-### Fedora 27
-- name: Fedora 27 BIOS
-  command: >-
-    fast-vm import_image fedora27 {{ public_image_url_base }}/generated/6g__fedora-27.img.xz
-    {{ xml_url_base }}/fedora/xml/fedora-23-27.xml
-    {{ hacks_url_base }}/fedora/hacks/6g_fedora-27-hacks.sh
-  args:
-    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora27"
-  tags:
-    - fedora
-    - fedora_27
-
 ### Fedora 28
 - name: Fedora 28 BIOS
   command: >-

@@ -148,3 +148,26 @@
   tags:
     - centos7_uefi
     - centos7_6_uefi
+
+### CentOS 7.7
+- name: CentOS 7.7 BIOS
+  command: >-
+    fast-vm import_image centos-7.7 {{ public_image_url_base }}/generated/6g__centos-7.7.img.xz
+    {{ xml_url_base }}/centos/xml/centos-6.3-current.xml
+    {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.7"
+  tags:
+    - centos7
+    - centos7_7
+
+- name: CentOS 7.7 UEFI
+  command: >-
+    fast-vm import_image centos-7.7-uefi {{ public_image_url_base }}/generated/6g__centos-7.7-uefi.img.xz
+    {{ xml_url_base }}/centos/xml/centos-7.0-current-uefi.xml
+    {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks-uefi.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.7-uefi"
+  tags:
+    - centos7_uefi
+    - centos7_7_uefi

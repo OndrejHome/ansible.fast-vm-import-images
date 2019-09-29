@@ -38,6 +38,11 @@
   tags:
     - centos
     - centos7_all
+- name: include centos8 images
+  include: centos8.yml
+  tags:
+    - centos
+    - centos8_all
 - name: include fedora images
   include: fedora.yml
 - name: include ubuntu images

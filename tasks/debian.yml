@@ -71,6 +71,18 @@
     - debian
     - debian9_9
 
+### Debian 9.11
+- name: Debian 9.11 BIOS
+  command: >-
+    fast-vm import_image debian-9.11 {{ public_image_url_base }}/generated/6g__debian-9.11.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.11"
+  tags:
+    - debian
+    - debian9_11
+
 ### Debian 10.0
 - name: Debian 10.0 BIOS
   command: >-
@@ -82,3 +94,15 @@
   tags:
     - debian
     - debian10_0
+
+### Debian 10.1
+- name: Debian 10.1 BIOS
+  command: >-
+    fast-vm import_image debian-10.1 {{ public_image_url_base }}/generated/6g__debian-10.1.img.xz
+    {{ xml_url_base }}/debian/xml/debian-10.xml
+    {{ hacks_url_base }}/debian/hacks/debian-10.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-10.1"
+  tags:
+    - debian
+    - debian10_1
