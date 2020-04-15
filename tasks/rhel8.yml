@@ -13,7 +13,7 @@
     remote_src: yes
   when: ansible_distribution != 'Fedora'
 
-### RHEL 8.0 Beta
+### RHEL 8.0
 - name: RHEL 8.0 BIOS
   command: >-
     fast-vm import_image rhel-8.0 {{ rhel_image_url_base }}/generated/6g__rhel-8.0.img.xz
@@ -35,3 +35,26 @@
   tags:
     - rhel8_uefi
     - rhel8_0_uefi
+
+### RHEL 8.1
+- name: RHEL 8.1 BIOS
+  command: >-
+    fast-vm import_image rhel-8.1 {{ rhel_image_url_base }}/generated/6g__rhel-8.1.img.xz
+    {{ xml_url_base }}/rhel/xml/rhel-6.3-current.xml
+    {{ hacks_url_base }}/rhel/hacks/6g_rhel-8-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-8.1"
+  tags:
+    - rhel8
+    - rhel8_1
+
+- name: RHEL 8.1 UEFI
+  command: >-
+    fast-vm import_image rhel-8.1-uefi {{ rhel_image_url_base }}/generated/6g__rhel-8.1-uefi.img.xz
+    {{ xml_url_base }}/rhel/xml/rhel-7.0-current-uefi.xml
+    {{ hacks_url_base }}/rhel/hacks/6g_rhel-8-hacks-uefi.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}rhel-8.1-uefi"
+  tags:
+    - rhel8_uefi
+    - rhel8_1_uefi
