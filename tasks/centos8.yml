@@ -22,3 +22,25 @@
     - centos8_uefi
     - centos8_0_uefi
 
+### CentOS 8.1
+- name: CentOS 8.1 BIOS
+  command: >-
+    fast-vm import_image centos-8.1 {{ public_image_url_base }}/generated/6g__centos-8.1.img.xz
+    {{ xml_url_base }}/centos/xml/centos-6.3-current.xml
+    {{ hacks_url_base }}/centos/hacks/6g_centos-8-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-8.1"
+  tags:
+    - centos8
+    - centos8_1
+
+- name: CentOS 8.1 UEFI
+  command: >-
+    fast-vm import_image centos-8.1-uefi {{ public_image_url_base }}/generated/6g__centos-8.1-uefi.img.xz
+    {{ xml_url_base }}/centos/xml/centos-7.0-current-uefi.xml
+    {{ hacks_url_base }}/centos/hacks/6g_centos-8-hacks-uefi.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-8.1-uefi"
+  tags:
+    - centos8_uefi
+    - centos8_1_uefi

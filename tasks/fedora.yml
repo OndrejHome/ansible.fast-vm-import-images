@@ -46,3 +46,15 @@
   tags:
     - fedora
     - fedora_31
+
+### Fedora 32
+- name: Fedora 32 BIOS
+  command: >-
+    fast-vm import_image fedora32 {{ public_image_url_base }}/generated/6g__fedora-32.img.xz
+    {{ xml_url_base }}/fedora/xml/fedora-28-current.xml
+    {{ hacks_url_base }}/fedora/hacks/6g_fedora-32-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}fedora32"
+  tags:
+    - fedora
+    - fedora_32

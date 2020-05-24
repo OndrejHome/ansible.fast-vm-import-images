@@ -83,6 +83,18 @@
     - debian
     - debian9_11
 
+### Debian 9.12
+- name: Debian 9.12 BIOS
+  command: >-
+    fast-vm import_image debian-9.12 {{ public_image_url_base }}/generated/6g__debian-9.12.img.xz
+    {{ xml_url_base }}/debian/xml/debian-9.xml
+    {{ hacks_url_base }}/debian/hacks/debian-9.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-9.12"
+  tags:
+    - debian
+    - debian9_12
+
 ### Debian 10.0
 - name: Debian 10.0 BIOS
   command: >-
@@ -106,3 +118,39 @@
   tags:
     - debian
     - debian10_1
+
+### Debian 10.2
+- name: Debian 10.2 BIOS
+  command: >-
+    fast-vm import_image debian-10.2 {{ public_image_url_base }}/generated/6g__debian-10.2.img.xz
+    {{ xml_url_base }}/debian/xml/debian-10.xml
+    {{ hacks_url_base }}/debian/hacks/debian-10.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-10.2"
+  tags:
+    - debian
+    - debian10_2
+
+### Debian 10.3
+- name: Debian 10.3 BIOS
+  command: >-
+    fast-vm import_image debian-10.3 {{ public_image_url_base }}/generated/6g__debian-10.3.img.xz
+    {{ xml_url_base }}/debian/xml/debian-10.xml
+    {{ hacks_url_base }}/debian/hacks/debian-10.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-10.3"
+  tags:
+    - debian
+    - debian10_3
+
+### Debian 10.4
+- name: Debian 10.4 BIOS
+  command: >-
+    fast-vm import_image debian-10.4 {{ public_image_url_base }}/generated/6g__debian-10.4.img.xz
+    {{ xml_url_base }}/debian/xml/debian-10.xml
+    {{ hacks_url_base }}/debian/hacks/debian-10.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}debian-10.4"
+  tags:
+    - debian
+    - debian10_4

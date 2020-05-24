@@ -171,3 +171,15 @@
   tags:
     - centos7_uefi
     - centos7_7_uefi
+
+### CentOS 7.8
+- name: CentOS 7.8 BIOS
+  command: >-
+    fast-vm import_image centos-7.8 {{ public_image_url_base }}/generated/6g__centos-7.8.img.xz
+    {{ xml_url_base }}/centos/xml/centos-6.3-current.xml
+    {{ hacks_url_base }}/centos/hacks/6g_centos-7-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-7.8"
+  tags:
+    - centos7
+    - centos7_8
