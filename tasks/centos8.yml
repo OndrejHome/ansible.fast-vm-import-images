@@ -14,7 +14,7 @@
 - name: CentOS 8.0 UEFI
   command: >-
     fast-vm import_image centos-8.0-uefi {{ public_image_url_base }}/generated/6g__centos-8.0-uefi.img.xz
-    {{ xml_url_base }}/centos/xml/centos-8.0-current-uefi.xml
+    {{ xml_url_base }}/centos/xml/centos-7.0-current-uefi.xml
     {{ hacks_url_base }}/centos/hacks/6g_centos-8-hacks-uefi.sh
   args:
     creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}centos-8.0-uefi"
