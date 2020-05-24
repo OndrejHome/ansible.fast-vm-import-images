@@ -1,0 +1,24 @@
+---
+### OpenSUSE 15.0
+- name: OpenSUSE 15.0 BIOS
+  command: >-
+    fast-vm import_image os-15.0 {{ public_image_url_base }}/generated/6g__opensuse-15.0.img.xz
+    {{ xml_url_base }}/opensuse/xml/opensuse-15.xml
+    {{ hacks_url_base }}/opensuse/hacks/6g_opensuse-15-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}os-15.0"
+  tags:
+    - opensuse
+    - opensuse_15_0
+
+### OpenSUSE 15.1
+- name: OpenSUSE 15.1 BIOS
+  command: >-
+    fast-vm import_image os-15.1 {{ public_image_url_base }}/generated/6g__opensuse-15.1.img.xz
+    {{ xml_url_base }}/opensuse/xml/opensuse-15.xml
+    {{ hacks_url_base }}/opensuse/hacks/6g_opensuse-15-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}os-15.1"
+  tags:
+    - opensuse
+    - opensuse_15_1

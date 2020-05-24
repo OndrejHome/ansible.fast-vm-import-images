@@ -1,0 +1,24 @@
+---
+### Ubuntu 18.04.4
+- name: Ubuntu 18.04.4 BIOS
+  command: >-
+    fast-vm import_image u1804.4 {{ public_image_url_base }}/generated/6g__ubuntu-18.04.4.img.xz
+    {{ xml_url_base }}/ubuntu/xml/ubuntu-lts-1804-current.xml
+    {{ hacks_url_base }}/ubuntu/hacks/ubuntu-1804-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}u1804.4"
+  tags:
+    - ubuntu
+    - ubuntu_18_04_4
+
+### Ubuntu 20.04.0
+- name: Ubuntu 20.04.0 BIOS
+  command: >-
+    fast-vm import_image u2004.0 {{ public_image_url_base }}/generated/6g__ubuntu-20.04.0.img.xz
+    {{ xml_url_base }}/ubuntu/xml/ubuntu-lts-1804-current.xml
+    {{ hacks_url_base }}/ubuntu/hacks/ubuntu-2004-hacks.sh
+  args:
+    creates: "/dev/{{ ansible_local.fastvm.conf.thinpool_vg }}/{{ ansible_local.fastvm.conf.vm_prefix }}u2004.0"
+  tags:
+    - ubuntu
+    - ubuntu_20_04_0

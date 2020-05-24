@@ -47,6 +47,10 @@
   include: fedora.yml
 - name: include debian images
   include: debian.yml
+- name: include ubuntu images
+  include: ubuntu.yml
+- name: include opensuse images
+  include: opensuse.yml
 - name: include rhel5 images
   include: rhel5.yml
   when: rhel_image_url_base|length > 0
